@@ -14,7 +14,7 @@ import tn.esprit.autoloc.entities.enumerations.RoleEmploye;
 public class Employe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idEmplye ;
+    Long idEmploye ;
     String nom ;
     String prenom ;
     RoleEmploye RoleEmploye ;
