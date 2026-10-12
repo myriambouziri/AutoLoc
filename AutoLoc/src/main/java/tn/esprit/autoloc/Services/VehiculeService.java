@@ -30,4 +30,9 @@ public class VehiculeService implements IVehiculeService{
     public List<Vehicule> FindAll() {
         return vehiculeRepository.findAll();
     }
+
+    @Override
+    public Vehicule FindByid(Long idvehicule) {
+        return vehiculeRepository.findById(idvehicule).orElse(null);
+    }
 }

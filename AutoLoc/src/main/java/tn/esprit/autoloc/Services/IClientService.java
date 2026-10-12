@@ -9,4 +9,5 @@ public interface IClientService {
     Client UpdateClient (Client client);
     void deleteClient(Long idClient);
     List<Client> FindAll();
+    Client FindByid(Long idClient);
 }

@@ -31,4 +31,9 @@ public class ContratService implements IContratService {
     public List<Contrat> FindAll() {
         return contratRepository.findAll();
     }
+
+    @Override
+    public Contrat FindByid(Long idContrat) {
+        return contratRepository.findById(idContrat).orElse(null);
+    }
 }

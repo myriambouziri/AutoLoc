@@ -30,4 +30,9 @@ public class EmployeService implements IEmployeService{
     public List<Employe> FindAll() {
         return employeRepository.findAll();
     }
+
+    @Override
+    public Employe FindByid(Long idEmploye) {
+        return employeRepository.findById(idEmploye).orElse(null);
+    }
 }

@@ -10,4 +10,5 @@ public interface IMaintenaceService {
     Maintenance UpdateMaintenance (Maintenance maintenance);
     void deleteMaintenance(Long idMaintenance);
     List<Maintenance> FindAll();
+    Maintenance FindByid(Long idMaintenance);
 }

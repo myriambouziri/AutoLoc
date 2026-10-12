@@ -1,5 +1,6 @@
 package tn.esprit.autoloc.Services;
 
+import tn.esprit.autoloc.entities.Client;
 import tn.esprit.autoloc.entities.Contrat;
 
 import java.util.List;
@@ -9,4 +10,6 @@ public interface IContratService {
     Contrat UpdateContrat (Contrat contrat);
     void deleteContrat(Long idContrat);
     List<Contrat> FindAll();
+    Contrat FindByid(Long idContrat);
+
 }

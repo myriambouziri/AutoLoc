@@ -30,4 +30,10 @@ public class PaiementService implements IPaiementService{
     public List<Paiement> FindAll() {
         return paiementRepository.findAll();
     }
+
+    @Override
+    public Paiement FindByid(Long idPaiement) {
+        return  paiementRepository.findById(idPaiement).orElse(null);
+    }
+
 }

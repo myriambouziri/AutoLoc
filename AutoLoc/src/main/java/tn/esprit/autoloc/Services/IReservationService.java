@@ -10,4 +10,5 @@ public interface IReservationService {
     Reservation UpdateReservation (Reservation reservation);
     void deleteReservation(Long idReservation);
     List<Reservation> FindAll();
+    Reservation FindByid(Long idReservation);
 }
