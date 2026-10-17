@@ -19,8 +19,9 @@ public class AgenceController {
     @GetMapping("/Get-agence/{agence-id}")
     public Agence FindByid(@PathVariable("agence-id") Long agenceId){Agence agence = agenceService.FindByid(agenceId); return agence;}
     @DeleteMapping("/delete-agence/{agence-id}")
-    public void deleteAgence(@PathVariable Long agenceId) {
+    public void deleteAgence(@PathVariable("agence-id") Long agenceId) {
         agenceService.deleteAgence(agenceId);
     }
+
 
 }
