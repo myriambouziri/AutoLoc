@@ -11,5 +11,6 @@ public interface IAgenceService {
     void deleteAgence(Long idAgence);
     List<Agence> FindAll();
     Agence FindByid(Long idAgence);
-
+    Agence affecterVehiculeAAgence(Long idAgence,Long idVehicule);
+    void desaffecterVehiculeDAgence(Long idVehicule);
 }

@@ -22,6 +22,10 @@ public class AgenceController {
     public void deleteAgence(@PathVariable("agence-id") Long agenceId) {
         agenceService.deleteAgence(agenceId);
     }
-
-
-}
+    @PutMapping ("/affecterVehiculeAAgence/{idAgence}/{idVehicule}")
+    public Agence affecterVehiculeAAgence(@PathVariable long idAgence,@PathVariable long idVehicule){
+        return agenceService.affecterVehiculeAAgence(idAgence,idVehicule);}
+    @PutMapping ("/desaffecterVehiculeDAgence/{idVehicule}")
+    public void desaffecterVehiculeDAgence(@PathVariable long idVehicule){
+         agenceService.desaffecterVehiculeDAgence(idVehicule);}
+    }
