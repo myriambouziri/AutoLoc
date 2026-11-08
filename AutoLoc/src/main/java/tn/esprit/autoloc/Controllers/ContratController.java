@@ -24,4 +24,7 @@ public class ContratController {
 
     @DeleteMapping("/delete-contrat/{contrat-id}")
     public void deleteContrat(@PathVariable("contrat-id") Long contratId) { contratService.deleteContrat(contratId); }
+
+    @PutMapping("/affecterPaiement/{idPaiement}/{idContrat}")
+    public void affecterPaiementAContrat(@PathVariable Long idPaiement,@PathVariable Long idContrat) { contratService.affecterPaiementAContrat(idPaiement, idContrat); }
 }

@@ -24,4 +24,15 @@ public class ReservationController {
 
     @DeleteMapping("/delete-reservation/{reservation-id}")
     public void deleteReservation(@PathVariable("reservation-id") Long reservationId) { reservationService.deleteReservation(reservationId); }
+
+    @PutMapping("/affecterContrat/{idContrat}/{idReservation}")
+    public Reservation affecterContratAReservation(@PathVariable Long idContrat,@PathVariable Long idReservation) {return reservationService.affecterContratAReservation(idContrat, idReservation);
+    }
+
+    @PutMapping("/desaffecterContrat/{idReservation}")
+    public void desaffecterContratDeReservation(@PathVariable Long idReservation) { reservationService.desaffecterContratDeReservation(idReservation);
+    }
+
+    @PutMapping("/affecterClient/{idClient}/{idReservation}")
+    public Reservation affecterClientAReservation(@PathVariable Long idClient,@PathVariable Long idReservation) {return reservationService.affecterClientAReservation(idClient, idReservation);}
 }

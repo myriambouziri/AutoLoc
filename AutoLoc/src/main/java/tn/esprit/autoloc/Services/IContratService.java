@@ -11,5 +11,5 @@ public interface IContratService {
     void deleteContrat(Long idContrat);
     List<Contrat> FindAll();
     Contrat FindByid(Long idContrat);
-
+    void affecterPaiementAContrat(Long idPaiement, Long idContrat);
 }

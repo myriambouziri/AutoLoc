@@ -55,7 +55,7 @@ public class AgenceService implements IAgenceService{
     public void desaffecterVehiculeDAgence(Long idVehicule) {
         Vehicule vehicule = vehiculeRepository.findById(idVehicule).get();
         vehicule.setAgence(null);
-        vehiculeRepository.save(vehicule);
+         vehiculeRepository.save(vehicule);
     }
 
 }
