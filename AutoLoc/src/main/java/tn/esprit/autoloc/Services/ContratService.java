@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.autoloc.Repositories.ContratRepository;
 import tn.esprit.autoloc.Repositories.PaiementRepository;
+import tn.esprit.autoloc.dto.ContratDTO;
 import tn.esprit.autoloc.entities.Contrat;
 import tn.esprit.autoloc.entities.Paiement;
+import tn.esprit.autoloc.mapper.ContratMapper;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class ContratService implements IContratService {
     ContratRepository contratRepository;
     PaiementRepository paiementRepository;
+    ContratMapper contratMapper;
     @Override
     public Contrat AddContrat(Contrat contrat) {
         return contratRepository.save(contrat);
@@ -31,13 +34,17 @@ public class ContratService implements IContratService {
     }
 
     @Override
-    public List<Contrat> FindAll() {
-        return contratRepository.findAll();
+    public List<ContratDTO> FindAll() {
+        return contratRepository.findAll().stream()
+                .map(contratMapper::toDto)
+                .toList();
     }
 
     @Override
-    public Contrat FindByid(Long idContrat) {
-        return contratRepository.findById(idContrat).orElse(null);
+    public ContratDTO FindByid(Long idContrat) {
+        Contrat contrat = contratRepository.findById(idContrat)
+                .orElseThrow(() -> new RuntimeException("Contrat non trouvé"));
+        return contratMapper.toDto(contrat);
     }
     @Override
     public void affecterPaiementAContrat(Long idPaiement, Long idContrat) {

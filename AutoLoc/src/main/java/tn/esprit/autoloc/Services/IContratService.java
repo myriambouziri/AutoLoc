@@ -1,5 +1,6 @@
 package tn.esprit.autoloc.Services;
 
+import tn.esprit.autoloc.dto.ContratDTO;
 import tn.esprit.autoloc.entities.Client;
 import tn.esprit.autoloc.entities.Contrat;
 
@@ -9,7 +10,7 @@ public interface IContratService {
     Contrat AddContrat (Contrat contrat);
     Contrat UpdateContrat (Contrat contrat);
     void deleteContrat(Long idContrat);
-    List<Contrat> FindAll();
-    Contrat FindByid(Long idContrat);
+    List<ContratDTO> FindAll();
+    ContratDTO FindByid(Long idContrat);
     void affecterPaiementAContrat(Long idPaiement, Long idContrat);
 }

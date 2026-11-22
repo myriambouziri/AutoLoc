@@ -13,12 +13,11 @@ import java.util.List;
 public class ClientController {
     private IClientService clientService;
     @PostMapping("/add-client")
-    public Client AddClient(@RequestBody Client client){return clientService.AddClient(client);}
+    public Client addClient(@RequestBody Client client){return clientService.AddClient(client);}
     @GetMapping("/Get-all")
-    public List<Client> FindAll(){
-        List<Client> listClients = clientService.FindAll(); return listClients;}
+    public List<Client> findAll(){return clientService.FindAll();}
     @GetMapping("/Get-client/{client-id}")
-    public Client FindByid(@PathVariable("client-id") Long clientId){Client client = clientService.FindByid(clientId); return client;}
+    public Client findByid(@PathVariable("client-id") Long clientId){return clientService.FindByid(clientId);}
     @DeleteMapping("/delete-client/{client-id}")
     public void deleteClient(@PathVariable("client-id") Long clientId) {
         clientService.deleteClient(clientId);
