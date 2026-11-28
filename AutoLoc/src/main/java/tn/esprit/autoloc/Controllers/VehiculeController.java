@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.autoloc.Services.IVehiculeService;
 import tn.esprit.autoloc.entities.Vehicule;
+import tn.esprit.autoloc.entities.enumerations.CategorieVehicule;
 
 import java.util.List;
 
@@ -30,7 +31,25 @@ public class VehiculeController {
 
     @PutMapping("/desaffecterEquipement/{idEquipement}/{idVehicule}")
     public void desaffecterEquipementDeVehicule(@PathVariable Long idEquipement,@PathVariable Long idVehicule) {vehiculeService.desaffecterEquipementDeVehicule(idEquipement, idVehicule);}
-}
+
+    @GetMapping("/get-by-marque/{marque}")
+    public List<Vehicule> findByMarqueLike(@PathVariable("marque") String marque) {return vehiculeService.findByMarqueLike(marque);}
+
+
+    @GetMapping("/get-by-categorie/{categorie}")
+    public List<Vehicule> findByCategorie(@PathVariable("categorie") CategorieVehicule categorie) {return vehiculeService.findByCategorie(categorie);}
+
+    @GetMapping("/get-by-agence/{idAgence}")
+    public List<Vehicule> getVehiculesByAgence(@PathVariable("idAgence") Long idAgence) {return vehiculeService.getVehiculesByAgence(idAgence);}
+
+
+
+    }
+
+
+
+
+
 
 
 

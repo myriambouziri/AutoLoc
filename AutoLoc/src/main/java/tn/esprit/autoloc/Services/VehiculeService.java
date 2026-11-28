@@ -6,6 +6,7 @@ import tn.esprit.autoloc.Repositories.EquipementRepository;
 import tn.esprit.autoloc.Repositories.VehiculeRepository;
 import tn.esprit.autoloc.entities.Equipement;
 import tn.esprit.autoloc.entities.Vehicule;
+import tn.esprit.autoloc.entities.enumerations.CategorieVehicule;
 
 import java.util.List;
 
@@ -54,4 +55,21 @@ public class VehiculeService implements IVehiculeService{
         vehicule.getEquipements().remove(equipement);
         vehiculeRepository.save(vehicule);
     }
+
+    @Override
+    public List<Vehicule> findByMarqueLike(String marque) {
+        return vehiculeRepository.findByMarqueLike(marque);
+    }
+
+    @Override
+    public List<Vehicule> findByCategorie(CategorieVehicule categorie) {
+        return vehiculeRepository.findByCategorie(categorie);
+    }
+
+    @Override
+    public List<Vehicule> getVehiculesByAgence(Long idAgence) {
+        return vehiculeRepository.getVehiculesByAgence(idAgence);
+    }
+
+
 }
